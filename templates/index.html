@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "bootstrap/base.html" %}
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List</title>
+</head>
+<body>
+<h1>My To-Do List</h1>
+    <ul>
+<!--        {{ items }}-->
+        {% if items|length == 0 %}
+            <p>To-Do List is empty.</p>
+        {% else %}
+            {% for item in items %}
+            <li>
+                <a href="{{url_for('delete',item_id=item['id'])}}">Delete Entry</a> -
+                {{ item['title'] }}
+            </li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+
+<a href="{{url_for('add')}}">Add New Item</a>
+</body>
+{% endblock %}
+</html>

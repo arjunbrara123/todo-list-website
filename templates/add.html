@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "bootstrap/base.html" %}
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add To-Do Item</title>
+</head>
+<body>
+    <form action="" method="POST">
+        <label>Item Title</label>
+        <input type="text" name="title">
+        <button type="submit">Add To-Do Item</button>
+    </form>
+    <br>
+    {{ msg }}
+    <br><br>
+    <a href="{{url_for('home')}}"> Back to Home</a>
+</body>
+{% endblock %}
+</html>
